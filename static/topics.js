@@ -1,17 +1,36 @@
 $(document).ready(function () {
-    if(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"].includes(position[0])) {
-        $("#listtitle").html("Here is a list of potential topics for an " + position + " interview: ")
-    }
-    else {
-        $("#listtitle").html("Here is a list of potential topics for a " + position + " interview: ")
-    }
-    for (var i = 0; i < topics.length; i++) {
-        $('#topic').append("<div>"+topics[i]+"</div>")
-    }
+
+
+    
+
+    $('#topicq2').keypress(function (e) {
+        if (e.which == 13) {
+            submit()
+        }
+    });
+
+
     $("#q2").click(function(e) {
+        e.preventDefault()
+        submit()
+    })
+
+
+    function submit() {
+
+        if(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"].includes(position[0])) {
+            $("#listtitle").html("Here is a list of potential topics for an " + position + " interview: ")
+        }
+        else {
+            $("#listtitle").html("Here is a list of potential topics for a " + position + " interview: ")
+        }
+        for (var i = 0; i < topics.length; i++) {
+            $('#topic').append("<div>"+topics[i]+"</div>")
+        }
+
         console.log("hello");
         $(".load").html("<img src = 'https://media4.giphy.com/media/zlcIBNopQj8Yx5QgpR/giphy.gif'>")
-        e.preventDefault()
+        
         t = $('#topicq2').val().trim()
         $.ajax({
             type : "POST",
@@ -31,5 +50,8 @@ $(document).ready(function () {
                 console.log(error)
             }
         });
-    })
+
+        
+    } //end submit function
+
 });
