@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    let responsetoq = {{responsetoq|tojson}}
+</script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'noeditresponsepage.js') }}"></script>
+    <body>
+        <div id = "listtitle">I'm glad you were satisfied with the response we created! Now, take some time to practice answering the question with the help of our response:</div>
+        <div id="noeditresp"></div>
+        <div class = "restart">Thanks for prepping with Interview Prepper! If you would like to continue practicing with personalized interview questions, click here:</div>
+        <div class = "centerbutton"><button id="restbutton">Click here to start over!</button></div>
+    </body>
+
+
+
+{% endblock %}

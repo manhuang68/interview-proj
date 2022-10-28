@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -41,6 +41,10 @@ def responsepage():
 def editresponsepage():
     return render_template('editresponsepage.html', editresponse=editresp)
 
+@app.route('/noeditresponsepage')
+def noeditresponsepage():
+    return render_template('noeditresponsepage.html', responsetoq=response)
+
 
 # AJAX FUNCTIONS
 @app.route('/question1', methods=['GET', 'POST'])
@@ -65,7 +69,7 @@ def q2():
     global position
     data = request.get_json()
     top = data[0]
-    prompt = "Give 1 multi-part interview question about "+ top +" at a "+ position +" interview. Make the question detailed and focused around " + top "."
+    prompt = "Give 1 multi-part interview question about "+ top +" at a "+ position +" interview. Make the question detailed."
     completion = openai.Completion.create(engine = "text-davinci-002", max_tokens = 256, prompt = prompt)
     question = completion.choices[0].text.strip()
     return jsonify(q=question)
