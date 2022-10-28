@@ -1,11 +1,13 @@
 $(document).ready(function () {
-    if(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"].includes(position[0])) {
-        $("#listtitle").html("Here is the most asked multi-part question related to " + topic + " for an " + position + " interview: ")
-    }
-    else {
-        $("#listtitle").html("Here is the most asked multi-part question related to " + topic + " for a " + position + " interview: ")
-    }
-    $('#quest').append("<div>"+question+"</div>")
+
+
+
+    $('#keywords').keypress(function (e) {
+        if (e.which == 13) {
+            submit()
+        }
+    });
+
 
     $('#keywords').keypress(function (e) {
         if (e.which == 13) {
