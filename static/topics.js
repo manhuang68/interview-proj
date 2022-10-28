@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    if(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"].includes(position[0])) {
+        $("#listtitle").html("Here is a list of potential topics for an " + position + " interview: ")
+    }
+    else {
+        $("#listtitle").html("Here is a list of potential topics for a " + position + " interview: ")
+    }
     for (var i = 0; i < topics.length; i++) {
         $('#topic').append("<div>"+topics[i]+"</div>")
     }

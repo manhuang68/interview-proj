@@ -3,14 +3,14 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Initialize Flask app
 app = Flask(__name__)
 
 position = ""
-field = ""
 topics_list = []
+top = ""
 question = ""
 keyws = ""
 response = ""
@@ -27,11 +27,11 @@ def start():
 
 @app.route('/topics')
 def topics():
-    return render_template('topics.html', topics=topics_list)
+    return render_template('topics.html', topics=topics_list, position=position)
 
 @app.route('/gptquestion')
 def gptquestion():
-    return render_template('gptquestion.html', question=question)
+    return render_template('gptquestion.html', question=question, topic=top, position=position)
 
 @app.route('/responsepage')
 def responsepage():
@@ -50,7 +50,6 @@ def noeditresponsepage():
 @app.route('/question1', methods=['GET', 'POST'])
 def q1():
     global position
-    global field
     global topics_list
     data = request.get_json()
     position = data[0]
@@ -69,7 +68,7 @@ def q2():
     global position
     data = request.get_json()
     top = data[0]
-    prompt = "Give 1 multi-part interview question about "+ top +" at a "+ position +" interview. Make the question detailed."
+    prompt = "Give 1 multi-part interview question about "+ top +" at a " + position + " interview. Make the question detailed."
     completion = openai.Completion.create(engine = "text-davinci-002", max_tokens = 256, prompt = prompt)
     question = completion.choices[0].text.strip()
     return jsonify(q=question)
