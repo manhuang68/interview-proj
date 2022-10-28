@@ -59,6 +59,8 @@ def q1():
     topics_list = []
     for line in result.splitlines():
         topics_list.append(line)
+    # print(f'topics_list: {topics_list}')        
+    # print(f'result: {result}')
     return jsonify(topics=result)
 
 @app.route('/question2', methods=['GET', 'POST'])

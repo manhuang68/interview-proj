@@ -1,8 +1,21 @@
 $(document).ready(function(){
+
+
+    $('#pos').keypress(function (e) {
+        if (e.which == 13) {
+            submit()
+        }
+    });
+
+
     $("#q1").click(function(e) {
-        console.log("hello");
-        $(".load").html("<img src = 'https://media4.giphy.com/media/zlcIBNopQj8Yx5QgpR/giphy.gif'>")
         e.preventDefault()
+        submit()
+    })
+
+    function submit() {
+        $(".load").html("<img src = 'https://media4.giphy.com/media/zlcIBNopQj8Yx5QgpR/giphy.gif'>")
+       
         position = $('#pos').val().trim()
         $.ajax({
             type : "POST",
@@ -22,5 +35,8 @@ $(document).ready(function(){
                 console.log(error)
             }
         });
-    })
+        
+    } //end submit function
+
+
 });
