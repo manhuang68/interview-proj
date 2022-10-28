@@ -65,7 +65,7 @@ def q2():
     global position
     data = request.get_json()
     top = data[0]
-    prompt = "Give 1 multi-part interview question about "+ top +" at a "+ position +" interview. Make the question detailed."
+    prompt = "Give 1 multi-part interview question about "+ top +" at a "+ position +" interview. Make the question detailed and focused around " + top "."
     completion = openai.Completion.create(engine = "text-davinci-002", max_tokens = 256, prompt = prompt)
     question = completion.choices[0].text.strip()
     return jsonify(q=question)
