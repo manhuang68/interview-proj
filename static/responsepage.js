@@ -3,9 +3,20 @@ $(document).ready(function () {
     $('#resp').append("<div>"+responsetoq+"</div>");
 
     $("#q4").click(function(e) {
+        e.preventDefault()
+        submit()
+    })
+
+    $('#keywsq4').keypress(function (e) {
+        if (e.which == 13) {
+            submit()
+        }
+    });
+
+    function submit() {
         console.log("hello");
         $(".load").html("<img src = 'https://media4.giphy.com/media/zlcIBNopQj8Yx5QgpR/giphy.gif'>")
-        e.preventDefault()
+        
         editkeys = $('#keywsq4').val().trim()
         if(editkeys == "no") {
             window.location.replace("/noeditresponsepage");
@@ -28,5 +39,5 @@ $(document).ready(function () {
                 console.log(error)
             }
         });
-    })
+    }
 });

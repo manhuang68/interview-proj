@@ -7,10 +7,21 @@ $(document).ready(function () {
     }
     $('#quest').append("<div>"+question+"</div>")
 
+    $('#keywords').keypress(function (e) {
+        if (e.which == 13) {
+            submit()
+        }
+    });
+
+
     $("#q3").click(function(e) {
+        e.preventDefault()
+        submit()
+    })
+
+    function submit() {
         console.log("hello");
         $(".load").html("<img src = 'https://media4.giphy.com/media/zlcIBNopQj8Yx5QgpR/giphy.gif'>")
-        e.preventDefault()
         keys = $('#keywords').val().trim()
         $.ajax({
             type : "POST",
@@ -30,5 +41,5 @@ $(document).ready(function () {
                 console.log(error)
             }
         });
-    })
+    }
 });
