@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
 
-
+    $('#quest').append("<div>"+question+"</div>")
+    
     $('#keywords').keypress(function (e) {
         if (e.which == 13) {
             submit()
