@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    let editresponse = {{editresponse|tojson}}
+</script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'editresponsepage.js') }}"></script>
+    <body>
+        <div id = "listtitle">Here is the edited response to the question based on the original keywords and new keywords/phrases you gave: </div>
+        <div id="editresp"></div>
+        <div class = "restart">Thanks for prepping with Interview Prepper! If you would like to practice with more personalized interview questions, click here:</div>
+        <div class = "centerbutton"><button id="restbutton">Click here to start over!</button></div>
+    </body>
+
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    let topics = {{topics|tojson}}
+</script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'topics.js') }}"></script>
+    <body>
+        <div id = "listtitle">Here is a list of potential topics: </div>
+        <div id="topic"></div>
+        <div class="question2">
+            <div>Please type the topic that interests you the most and prepare to practice related questions and get feedback!: <input type="text" id="topicq2"> <button id="q2">Submit</button></div>
+        </div>
+        <div class = "load"></div>
+    </body>
+
+
+
+{% endblock %}

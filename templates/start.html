@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'start.js') }}"></script>
+
+    <body>
+        <div class="container1">
+            <div id="title">
+                Welcome to the start of your interview preparation!
+            </div>
+            <div id="subtext">
+                To begin, we will ask a few questions to cater the preparation to you and your upcoming interviews!
+            </div>
+        </div>
+        <div class="questions">
+            <div>Enter the position you are interviewing for: <input type="text" id="pos"> <button id="q1">Submit</button></div>
+        </div>
+        <div class="load"></div>
+    </body>
+
+{% endblock %}

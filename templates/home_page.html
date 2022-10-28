@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'home_page.js') }}"></script>
+
+    <body>
+        <div class="container1">
+            <div id="title">
+                Interview Prepper!
+            </div>
+            <div id="subtext">
+                Resource to prepare for any of your job interviews, using the help of the powerful GPT-3 Tool
+            </div>
+        </div>
+        <div class="start">
+            <button class="button" id="start">Start Prepping!</button>
+        </div>
+    </body>
+
+{% endblock %}
