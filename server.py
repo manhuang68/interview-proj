@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -59,7 +59,7 @@ def q1():
     topics_list = []
     for line in result.splitlines():
         topics_list.append(line)
-    # print(f'topics_list: {topics_list}')        
+    # print(f'topics_list: {topics_list}')
     # print(f'result: {result}')
     return jsonify(topics=result)
 
