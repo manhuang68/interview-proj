@@ -1,4 +1,3 @@
-
 #title {
     text-align: center;
     font-size: 38px;
@@ -9,12 +8,7 @@
     text-align: center;
     font-size: medium;
 }
-#imghomepage{
-  display: block;
-margin-left: auto;
-margin-right: auto;
-width: 60%;
-}
+
 body {
     background-image: linear-gradient(rgb(112,112,112),rgb(212,212,212));
     min-height: 850px;
@@ -97,11 +91,8 @@ textarea {
 .centerbutton {
     text-align: center;
 }
-<<<<<<< HEAD
-=======
 
 #imghomepage {
     text-align: center;
     padding-top: 10px;
 }
->>>>>>> d782e3cdb20b3e76f79e1c4bd621c68a1c09de7f
