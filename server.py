@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Initialize Flask app
 app = Flask(__name__)

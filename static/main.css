@@ -92,3 +92,8 @@ textarea {
 .centerbutton {
     text-align: center;
 }
+
+#imghomepage {
+    text-align: center;
+    padding-top: 10px;
+}

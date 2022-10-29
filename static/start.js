@@ -15,7 +15,6 @@ $(document).ready(function(){
 
     function submit() {
         $(".load").html("<img src = 'https://media4.giphy.com/media/zlcIBNopQj8Yx5QgpR/giphy.gif'>")
-       
         position = $('#pos').val().trim()
         $.ajax({
             type : "POST",
